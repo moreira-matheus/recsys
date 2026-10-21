@@ -23,3 +23,27 @@
 **Content-based recommender systems**: users' ratings and attribute descriptions are leveraged to make predictions.
 
 ### 1.2 Goals of Recommender Systems
+
+**Recommendation problem**:
+- Prediction version of problem:
+    - Predicts rating for user-item combination. Assumes training data is available.
+    - For $m$ users and $n$ items, corresponds to an incomplete $m \times n$ matrix.
+    - Also referred to as *matrix completion problem*.
+- Ranking version of problem:
+    - Recommends the top-$k$ items for a particular user (or less commonly  the top-$k$ users to target with an item).
+    - Also referred to as *top-$k$ recommendation problem*.
+
+**Common operational and technical goals**:
+1. <u>Relevance</u>: recommending items which are relevant to the users.
+2. <u>Novelty</u>: recommending items the user has not seen in the past.
+3. <u>Serendipity</u>: recommending items which are somewhat unexected, coming across as a "lucky discovery".
+4. <u>Increasing recommendation diversity</u>: avoid recommending items which are too similar.
+
+**Commercial recommender systems**:
+- GroupLens Recommender System
+- Amazon.com Recommender System
+- Netflix Movie Recommender System
+- Google News Personalization System
+- Facebook Friend Recommendations
+
+#### 1.2.1 The Spectrum of Recommendation Applications
