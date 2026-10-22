@@ -5,6 +5,7 @@
 1. [An Introduction to Recommender Systems](#chapter-1-an-introduction-to-recommender-systems)
     - 1.1 [Introduction](#11-introduction)
     - 1.2 [Goals of Recommender Systems](#12-goals-of-recommender-systems)
+    - 1.3 [Basic Models of Recommender Systems](#13-basic-models-of-recommender-systems)
 
 ---
 
@@ -46,4 +47,20 @@
 - Google News Personalization System
 - Facebook Friend Recommendations
 
-#### 1.2.1 The Spectrum of Recommendation Applications
+### 1.3 Basic Models of Recommender Systems
+
+#### Collaborative Filterring Models
+
+Use ratings provided by multiple users to make recommendations.
+
+The main challenge is that ratings matrices are *sparse*.
+- Specified ratings are also known as *observed ratings*.
+
+Most models use either inter-item correlation or inter-user correlation. Some use both.
+
+Types of models to impute missing values:
+
+1. <u>Memory-based methods</u>: also referred to as *neighborhood-based collaborative filtering algorithms*. AMong the earliest collaborative filtering algorithms. Ratings of user-item combinations are predicted based on their neighborhoods.
+    - *User-based collaborative filtering*:
+    - *Item-based collaborative filtering*:
+2. <u>Model-based methods</u>
