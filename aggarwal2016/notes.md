@@ -58,9 +58,15 @@ The main challenge is that ratings matrices are *sparse*.
 
 Most models use either inter-item correlation or inter-user correlation. Some use both.
 
-Types of models to impute missing values:
+**Types of models to impute missing values**:
 
 1. <u>Memory-based methods</u>: also referred to as *neighborhood-based collaborative filtering algorithms*. AMong the earliest collaborative filtering algorithms. Ratings of user-item combinations are predicted based on their neighborhoods.
-    - *User-based collaborative filtering*:
-    - *Item-based collaborative filtering*:
-2. <u>Model-based methods</u>
+    - **Approaches**:
+        - *User-based collaborative filtering*: determine users who are similar to a target user $A$; infer values for unobserved ratings of $A$ by computing weighted averages of the ratings of the similar users.
+        - *Item-based collaborative filtering*: determine set of items $S$ which are most similar to target item $B$; the ratings of $S$ by user $A$ are used to predict whether $A$ will like item $B$.
+    - **Pros**: Techniques are simple to implement, recommendations are easy to explain.
+    - **Cons**: Do not work well with sparse matrices.
+2. <u>Model-based methods</u>: machine learning and data mining models are used to make predictions; if models are parameterized, parameters are learned using optimization.
+    - **Examples**: decision trees, rule-based models, Bayesian methods, [latent factor models](https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/latent-factor-models.html).
+
+**Types of ratings**:
