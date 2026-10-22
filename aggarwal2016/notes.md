@@ -49,7 +49,7 @@
 
 ### 1.3 Basic Models of Recommender Systems
 
-#### Collaborative Filterring Models
+#### 1.3.1 Collaborative Filtering Models
 
 Use ratings provided by multiple users to make recommendations.
 
@@ -70,3 +70,34 @@ Most models use either inter-item correlation or inter-user correlation. Some us
     - **Examples**: decision trees, rule-based models, Bayesian methods, [latent factor models](https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/latent-factor-models.html).
 
 **Types of ratings**:
+
+*Interval-based ratings*: a discrete set of ordered numbers is used to quantify like or dislike.
+
+*Forced choice rating system*: system in which a neutral rating is missing.
+
+*Ordinal ratings*: a discrete set of ordered categorical values to express like or dislike.
+
+*Binary ratings*: users indicate only a like or dislike for the item.
+- *Unary ratings*: special case, in which the user can specify a liking for an item but not a dislike; particularly common in [implicit feedback data sets](https://ieeexplore.ieee.org/document/4781121).
+
+> NOTE: "Pre-substitution of missing ratings is not recommended in explicit ratings matrices. In explicit ratings matrices with both likes and dislikes, the substitution of missing entries with any value (such as a $0$ or the row/column/data mean) always leads to a significant amount of bias in the analysis." (p. 12)
+
+**Collaborative filtering** can be seen as a special case of [missing value analysis](https://bookdown.org/drki_musa/dataanalysis/introduction-to-missing-data-analysis.html) in which the data matrix is very large and sparse.
+
+**Collaborative filtering** can also be seen as a generalization of classification and regression modeling, in which any column is allowed to have missing values, instead of only the class (target) variable.
+
+#### 1.3.2 Content-based Recommender Systems
+
+Use descriptive attributes of items to make recommendations.
+
+Ratings and the users' buying behavior are combined with content information avaiable on the items (e.g., for a movie, it could be its description).
+
+Here, the descriptions of the items are labeled with ratings and used as training data to create a *user-specific* classification or regression model.
+
+**Advantage**: making recommendations for new items, with insufficient ratings data.
+
+**Disadvantages**:
+- They might make obvious recommendations, avoiding items with a a set of keywords the user never consumed (which means the recommndations might lack diversity).
+- They are not effective in providing recommendations for new *users*, since the training models require to leverage said user's past ratings.
+
+#### 1.3.3 Knowledge-based Recommender Systems
