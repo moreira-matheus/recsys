@@ -101,3 +101,21 @@ Here, the descriptions of the items are labeled with ratings and used as trainin
 - They are not effective in providing recommendations for new *users*, since the training models require to leverage said user's past ratings.
 
 #### 1.3.3 Knowledge-based Recommender Systems
+
+Particularly useful when items are not consumed or purchased very often, thus sufficient ratings may not be available.
+
+Ratings are not used for recommendations, but rather the similarity between customer requirements and item descriptions.
+
+Facilitated by the use of *knowledge bases*, with data about rules and similarity functions to use during retrieval.
+
+Provide user with more control over the recommendation process, due to the explicit specification of requirements (in contrast with collaborative filtering and content-based systems, which basically rely on the users' past actions).
+
+**Types of interface (and corresponding knowledge)**:
+
+1. <u>Constraint-based recommender systems</u>: user typically specify requirements or constraints (e.g., lower or upper limits) on items' attributes. Domain-specific rules are used to match the user requirements to item attributes. 
+2. <u>Case-based recommender systems</u>: users specify targets or anchor points. Similarity metrics are defined on the item attributes to retrieve similar items to these cases.
+
+**Methods of interactivity**:
+1. <u>Conversational systems</u>: user preferences are determined iteratively, in a feedback loop.
+2. <u>Search-based systems</u>: user preferences are defined by using a preset sequence of questions.
+3. <u>Navigation-based systems</u>: the user specifies a number of change requests to the item being currently recommended, until they arrive at a desirable item.
