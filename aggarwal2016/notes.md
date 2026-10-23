@@ -6,6 +6,7 @@
     - 1.1 [Introduction](#11-introduction)
     - 1.2 [Goals of Recommender Systems](#12-goals-of-recommender-systems)
     - 1.3 [Basic Models of Recommender Systems](#13-basic-models-of-recommender-systems)
+    - 1.4 [Domain-specific Challenges in Recommender Systems](#14-domain-specific-challenges-in-recommender-systems)
 
 ---
 
@@ -135,4 +136,26 @@ Do not usually provide the best results in and of themselves, but can increase t
 
 #### 1.3.5 Hybrid and Ensemble-Based Recommender Systems
 
+Particularly useful when there is a variety of inputs available.
+
+Closely related to the field of [ensemble analysis](https://en.wikipedia.org/wiki/Ensemble_learning).
+
 #### 1.3.6 Evaluation of Recommender Systems
+
+Many of the models used for evaluation of classifiers can be used for evaluating recommender systems, but with some adjustments.
+
+### 1.4 Domain-specific Challenges in Recommender Systems
+
+#### 1.4.1 Context-based Recommender Systems
+
+Take various types of contextual information into account when making recommendations, including time, location, and social data.
+
+It has been generally observed that using such contextual information can improve the effectiveness of recommendation.
+
+#### 1.4.2 Time-sensitive Recommender Systems
+
+[TODO]
+
+#### 1.4.3 Location-based Recommender Systems
+
+#### 1.4.4 Social Recommender Systems
