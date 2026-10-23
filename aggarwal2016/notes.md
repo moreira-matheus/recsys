@@ -119,3 +119,20 @@ Provide user with more control over the recommendation process, due to the expli
 1. <u>Conversational systems</u>: user preferences are determined iteratively, in a feedback loop.
 2. <u>Search-based systems</u>: user preferences are defined by using a preset sequence of questions.
 3. <u>Navigation-based systems</u>: the user specifies a number of change requests to the item being currently recommended, until they arrive at a desirable item.
+
+**Utility-based Recommender Systems**:
+
+A utility function is defined on the item features to compute the probability of a user liking it.
+- Can be viewed as a special case of knowledge-based recommender systems, in which the values of the utility function are known *a priori*.
+
+#### 1.3.4 Demographic Recommender Systems
+
+Demographic information about the user is used to model ratings or buying propensities.
+
+*Context-sensitive recommender systems*: demographic information is combined with additional context to guide recommendation.
+
+Do not usually provide the best results in and of themselves, but can increase the power of other recommender systems as a part of hybrid or ensemble models.
+
+#### 1.3.5 Hybrid and Ensemble-Based Recommender Systems
+
+#### 1.3.6 Evaluation of Recommender Systems
