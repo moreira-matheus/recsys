@@ -154,8 +154,23 @@ It has been generally observed that using such contextual information can improv
 
 #### 1.4.2 Time-sensitive Recommender Systems
 
-[TODO]
+**Temporal aspects in recommender systems**:
+
+1. The rating of an item might evolve over time, following users' interests, likes, dislikes, and fashions.
+    - Can be done by incorporating an explicit temporal parameter in a collaborative filtering system.
+2. The rating of an item might change according with the time of the day, day of the week, month, or season.
+    - Can be viewed as a special case of context-based recommender systems.
+
+Temporal recommender systems usually worsen the rating matrix's sparsity problem.
+- It is important to have large data sets in these settings. 
 
 #### 1.4.3 Location-based Recommender Systems
+
+**Spatial locality common to recommender systems**:
+
+1. User-specific locality (or *preference* locality): the user's geographical location influences their preferences.
+    - Algorithms are similar to context-sensitive systems.
+2. Item-specific locality (or *travel* locality): the item's geographical location influences its relevance to the user.
+    - Algorithms usually designed as *ad hoc* heuristics.
 
 #### 1.4.4 Social Recommender Systems
