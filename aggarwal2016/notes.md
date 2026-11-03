@@ -7,6 +7,7 @@
     - 1.2 [Goals of Recommender Systems](#12-goals-of-recommender-systems)
     - 1.3 [Basic Models of Recommender Systems](#13-basic-models-of-recommender-systems)
     - 1.4 [Domain-specific Challenges in Recommender Systems](#14-domain-specific-challenges-in-recommender-systems)
+    - 1.5 [Advanced Topics and Applications](#15-advanced-topics-and-applications)
 
 ---
 
@@ -174,3 +175,28 @@ Temporal recommender systems usually worsen the rating matrix's sparsity problem
     - Algorithms usually designed as *ad hoc* heuristics.
 
 #### 1.4.4 Social Recommender Systems
+
+**Structural Recommendation of Nodes and Links**:
+
+Problem of node recommendation is closely related to that of Web search:
+- Both require ranking algorithms, which are also referred to as personalized [PageRank](https://en.wikipedia.org/wiki/PageRank) algorithms.
+- *Collective classification*: when examples of nodes of interest are available and are used as training data to determine other possible nodes of interest.
+- Link recommendation or link prediction problem is also closely related.
+
+**Product or Content Recommendations with Social Influence**:
+
+*Viral marketing*: recommendation of products and content based on network connections and other social cues.
+- To achieve the goal it is important to identify influential entities in the network: *influence analysis*.
+
+**Trustworthy Recommender Systems**:
+
+There are websites that allow users to express their trust or distrust in one another.
+- Research has shown that incorporating trust information leads to better recommendations.
+
+**Leveraging Social Tagging Feedback for Recommendations**:
+
+*Tags*: metadata users utilize to add short informative keywords to a content.
+- Tags are useful content for recommendations.
+- Context-sensitive recommendation can directly incorporate such feedback.
+
+### 1.5 Advanced Topics and Applications
