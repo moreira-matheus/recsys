@@ -8,6 +8,7 @@
     - 1.3 [Basic Models of Recommender Systems](#13-basic-models-of-recommender-systems)
     - 1.4 [Domain-specific Challenges in Recommender Systems](#14-domain-specific-challenges-in-recommender-systems)
     - 1.5 [Advanced Topics and Applications](#15-advanced-topics-and-applications)
+2. [Neighborhood-Based Collaborative Filtering](#chapter-2-neighborhood-based-collaborative-filtering)
 
 ---
 
@@ -220,8 +221,21 @@ Sellers of products and services have significant economic incentives to manipul
 
 #### 1.5.4 Multi-Criteria Recommender Systems
 
+In multi-criteria systems, the user might rate items on different dimensions.
+- For instance, a movie can be rated based on the plot, music, special effects etc.
+- Techniques involve modeling the user's utility for a certain item as a vector of ratings corresponding to the criteria.
+
 #### 1.5.5 Active Learning in Recommender Systems
+
+To overcome the sparsity of the ratings matrix, some systems have mechanisms to encourage users to provide ratings to populate the system.
 
 #### 1.5.6 Privacy in Recommender Systems
 
+Privacy concerns might impede the release of data that is necessary for advancing recommendation algorithms.
+
 #### 1.5.7 Application Domains
+
+Some domains in which recommender systems are applied require specialized methods.
+- For instance, recommender systems assume the existence of a strong user-identification mechanism, which, say, in Web settings, might ont be available.
+
+## Chapter 2: Neighborhood-Based Collaborative Filtering
