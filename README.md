@@ -36,7 +36,7 @@
 
 5. Da Silva et al. (2026), How Much Do Reviews Really Contribute? A Study on Text-Enriched Matrix Factorization for Recommendations.
 
-6. Piras, Da Silva and Durão (2026), A Systematic Analysis of Methods for Uncertainty Quantification in Distribution-based Recommender Systems.
+6. Pires, Da Silva and Durão (2026), A Systematic Analysis of Methods for Uncertainty Quantification in Distribution-based Recommender Systems.
 
 ### Step 3: Uncertainty and Calibration
 
