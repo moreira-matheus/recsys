@@ -24,7 +24,11 @@
 
 ### Step 1: Fundamentals
 
-1. Aggarwal, 2016: chapters 1, 2, 3 & 7.
+1. Aggarwal, 2016:
+    - Chapter 1: An Introduction to Recommender Systems ✅
+    - Chapter 2: Neighborhood-Based Collaborative Filtering
+    - Chapter 3: Model-Based Collaborative Filtering
+    - Chapter 7: Evaluating Recommender Systems
 
 2. Koren, Bell and Volinsky (2009), Matrix Factorization Techniques for Recommender Systems.
 
