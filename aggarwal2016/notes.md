@@ -200,3 +200,28 @@ There are websites that allow users to express their trust or distrust in one an
 - Context-sensitive recommendation can directly incorporate such feedback.
 
 ### 1.5 Advanced Topics and Applications
+
+#### 1.5.1 The Cold-Start Problem in Recommender Systems
+
+**Cold-start problem**: number of initially available ratings is small.
+- It is difficult to apply collaborative filtering.
+- Content-based and knowledge-based methods are more robust than collaborative filtering, but the information theyr require might not also be available.
+
+#### 1.5.2 Attack-Resistant Recommender Systems
+
+Sellers of products and services have significant economic incentives to manipulate the output of recommender systems (e.g., inflating ratings).
+- We need methods to have robust recommendations in the presence of such attacks.
+
+#### 1.5.3 Group Recommender Systems
+
+*Group recommender systems*: tailored to make recommendations to a group of user, rather than a single one.
+- Consensus has evolved such that taking interactions between users into account, in some settings, might yield better results than making individual recommendations.
+- This happens because users might impact each others' tastes and preferences.
+
+#### 1.5.4 Multi-Criteria Recommender Systems
+
+#### 1.5.5 Active Learning in Recommender Systems
+
+#### 1.5.6 Privacy in Recommender Systems
+
+#### 1.5.7 Application Domains
