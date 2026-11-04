@@ -24,7 +24,7 @@
 
 ### Step 1: Fundamentals
 
-1. Aggarwal, 2016: chapters 
+1. Aggarwal, 2016: chapters 1, 2, 3 & 7.
 
 2. Koren, Bell and Volinsky (2009), Matrix Factorization Techniques for Recommender Systems.
 
