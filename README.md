@@ -30,7 +30,7 @@
     - Chapter 3: Model-Based Collaborative Filtering
     - Chapter 7: Evaluating Recommender Systems
 
-2. Koren, Bell and Volinsky (2009), Matrix Factorization Techniques for Recommender Systems.
+2. Koren, Bell and Volinsky (2009), Matrix Factorization Techniques for Recommender Systems. ✅
 
 3. Practice: implement matrix factorization for MovieLens, measure error, HR and nDCG, separating more and less active users.
 
