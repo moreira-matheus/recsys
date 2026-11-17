@@ -9,6 +9,8 @@
     - 1.4 [Domain-specific Challenges in Recommender Systems](#14-domain-specific-challenges-in-recommender-systems)
     - 1.5 [Advanced Topics and Applications](#15-advanced-topics-and-applications)
 2. [Neighborhood-Based Collaborative Filtering](#chapter-2-neighborhood-based-collaborative-filtering)
+    - 2.1 [Introduction](#21-introduction)
+    - 2.2 [Key Propoerties of Ratings Matrices](#22-key-properties-of-ratings-matrices)
 
 ---
 
@@ -239,3 +241,19 @@ Some domains in which recommender systems are applied require specialized method
 - For instance, recommender systems assume the existence of a strong user-identification mechanism, which, say, in Web settings, might ont be available.
 
 ## Chapter 2: Neighborhood-Based Collaborative Filtering
+
+### 2.1 Introduction
+
+Neighborhood-based collaborative filtering is also known as memory-based algorithms.
+
+**Types**:
+- *User-based collaborative filtering*: ratings provided by similar users to a target user $A$ are used to make recommendations for $A$.
+- *Item-based collaborative filtering*: the rating of a particular user $A$ for an item $B$ is computed from the weighted average rating of a set $S$ of items most similar to $B$.
+
+Let the *user-item matrix* be an incomplete $m \times n$ matrix $R = [r_{uj}]$, containing $m$ users and $n$ items.
+
+Neighborhood-based collaborative filtering (as all collaborative filtering algorithms) can be formulated in two ways:
+1. *Predicting the rating value of a user-item combination*: i.e., predicting $r_{uj}$.
+2. *Determining the top $k$ items or top $k$ users*: when it is more relevant to learn the most relevant items for an user, or the top $k$ users for which an particular item might be relevant.
+
+### 2.2 Key Properties of Ratings Matrices
