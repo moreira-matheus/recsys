@@ -11,6 +11,7 @@
 2. [Neighborhood-Based Collaborative Filtering](#chapter-2-neighborhood-based-collaborative-filtering)
     - 2.1 [Introduction](#21-introduction)
     - 2.2 [Key Propoerties of Ratings Matrices](#22-key-properties-of-ratings-matrices)
+    - 2.3 [Predicting Ratings with Neighborhood-Based Methods](#23-predicting-ratings-with-neighborhood-based-methods)
 
 ---
 
@@ -257,3 +258,26 @@ Neighborhood-based collaborative filtering (as all collaborative filtering algor
 2. *Determining the top $k$ items or top $k$ users*: when it is more relevant to learn the most relevant items for an user, or the top $k$ users for which an particular item might be relevant.
 
 ### 2.2 Key Properties of Ratings Matrices
+
+Ratings matrix: $m \times n$ matrix $R = [r_{uj}]$
+- *Training data*: specified entries of matrix $R$;
+- *Test data*: unspecified entries.
+
+**Ratings definitions**:
+1. *Continuos ratings*: specified on a continuous scale; the drawback is that the user has to think of a real value from an infinity of possibilities.
+2. *Interval-based ratings*: drawn most commonly from a 5-point or 7-point scale; assumes numerical values explicitly define distances between ratings; ratings are usually equidistant.
+3. *Ordinal ratings*: similar to interval-based ones, except that ordered *categorical* values are used; does not assume the differences between adjacent pairs of ratings are the same; generally, the number of positive and negative ratings is balanced, to avoid bias.
+4. *Binary ratings*: only two options present, corresponding to positive and negative feedback; can be viewed as a special case of interval-based or ordered ratings.
+5. *Unary ratings*: allow user to specify positive preference for items, without a mechanism for negative preference; more often derived from users' actions, such as clicking the "like" button or purchasing an item.
+    - Derivation: implicit feedback, see also [Positive Unlabeled Learning](https://www.geeksforgeeks.org/machine-learning/why-positive-unlabeled-learning/).
+
+**Long-tail property**:
+- Only a small fraction of items are rated frequently (*popular* items); vast majority are rated rarely. Thus, underlying ratings follow a highly skewed distribution.
+- Implications:
+    1. Commonly, high-frequency items are competitive with little profit margin, while lower frequency ones are more profitable. In these cases, it is more advantageous to recommend lower frequency items.
+    2. Due to the rarity of ratings for long tail items, it is more difficult to provide robust predictions for them. This might affect the recommendations' *diversity*.
+    3. Frequently rated items are fewer in number. For algorithms such as neighborhood-based collaborative filtering, those few frequently-rated observations will be the basis for predictions, even though they might not be representative of the low-frequency items.
+
+<img src="./img/ratings-long-tail.png" width=500>
+
+### 2.3 Predicting Ratings with Neighborhood-Based Methods
