@@ -281,3 +281,44 @@ Ratings matrix: $m \times n$ matrix $R = [r_{uj}]$
 <img src="./img/ratings-long-tail.png" width=500>
 
 ### 2.3 Predicting Ratings with Neighborhood-Based Methods
+
+**Basic principles in neighborhood-based models**:
+1. User-based models: similar users have similar ratings on the same item.
+2. Item-based models: similar items are rated in a similar way by the same user.
+
+#### 2.3.1 User-Based Neighborhood Models
+
+To determine the neighborhood of target user $i$, we compute their similarity to all other users.
+
+Let $R = [r_{uj}]$ be the $m \times n$ ratings matrix, with $m$ users and $n$ items. Let $I_u$ be the set of item indices for which user (row) $u$ specified ratings.
+- Therefore, the set of items rated by both users $u$ and $v$ is given by $I_u \cap I_v$. These are the mutually observed ratings, used to compute the similarity between $u$ and $v$ $\text{Sim}(u,v)$. 
+
+**Pearson correlation coefficient**: one measure that captures the similarity $\text{Sim}(u,v)$. (More at [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient).)
+
+First step: mean rating $\mu_{u}$ for each user $u$. 
+
+$$
+\mu_{u} = \displaystyle\frac{\sum_{k \in I_u} r_{uk}}{|I_u|} \quad \forall u \in \{1, ..., m\}
+$$
+
+Coefficient between rows (users) $u$ and $v$.
+
+$$
+\text{Sim}(u,v) = \text{Pearson}(u,v) = \displaystyle\frac
+{\sum_{k \in I_u \cap I_v} (r_{uk} - \mu_{u})\cdot(r_{vk} - \mu_v)}
+{\sqrt{\sum_{k \in I_u \cap I_v} (r_{uk} - \mu_u)^2} \cdot \sqrt{\sum_{k \in I_u \cap I_v} (r_{vk} - \mu_v)^2}}
+$$
+
+> "The Pearson coefficient is computed between the target user and all the other users. One way of defining the peer group of the target user would be to use the set of $k$ users with the highest Pearson coefficient with the target. However, since the number of observed ratings in the top $k$ peer group of a target user may vary significantly with the item at hand, the closest $k$ users are found for the target user separately for each predicted item, such that each of these k users have specified ratings for that item. The weighted average of these ratings can be returned as the predicted rating for that item. Here, each rating is weighted with the Pearson correlation coefficient of its owner to the target user." (p. 35)
+
+Main problem with this approach: different rating scales.
+- Raw ratings need to be mean-centered in a row-wise way before the neighborhood's weighted average is determined.
+- The mean-centered rating $s_{uj}$ of a user $u$ for item $j$ is computed by subtracting the mean rating $\mu_{u}$ from the raw rating $r_{uj}$:
+
+$$
+s_{uj} = r_{uj} - \mu_{u}
+$$
+
+(PG 36)
+
+#### 2.3.2 Item-Based Neighborhood Models
