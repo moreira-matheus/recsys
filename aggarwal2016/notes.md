@@ -319,6 +319,40 @@ $$
 s_{uj} = r_{uj} - \mu_{u}
 $$
 
-(PG 36)
+Raw rating prediction $\hat{r}_{uj}$ of target user $u$ for item $j$:
+
+$$
+\hat{r}_{uj} = \mu_u + \displaystyle\frac{\sum_{v \in P_u(j)} \text{Sim}(u,v) \cdot s_{vj}}{\sum_{v \in P_u(j)} |\text{Sim}(u,v)|} = \mu_u + \displaystyle\frac{\sum_{v \in P_u(j)} \text{Sim}(u,v) \cdot (r_{uj} - \mu_{u})}{\sum_{v \in P_u(j)} |\text{Sim}(u,v)|}
+$$
+
+where $P_u(j)$ is the set of $k$ closest users to target user $u$ who have specified ratings for item $j$.
+
+**Similarity Function Variants**:
+
+<u>Raw Cosine similarity</u> (normalized only by mutually specified items):
+
+$$
+\text{RawCosine}(u,v) = \displaystyle\frac{\sum_{k \in I_u \cap I_v} r_{uk} \cdot r_{vk}}{\sqrt{\sum_{k \in I_u \cap I_v} r_{uk}^2}\cdot \sqrt{\sum_{k \in I_u \cap I_v} r_{vk}^2}}
+$$
+
+<u>Raw Cosine similarity</u> (normalized by *all* specified items):
+
+$$
+\text{RawCosine}(u,v) = \displaystyle\frac{\sum_{k \in I_u \cap I_v} r_{uk} \cdot r_{vk}}{\sqrt{\sum_{k \in I_u} r_{uk}^2}\cdot \sqrt{\sum_{k \in I_v} r_{vk}^2}}
+$$
+
+> "In general, the Pearson correlation coefficient is preferable to the raw cosine because of the *bias adjustment* effect of mean-centering. The adjustment accounts for the fact that different users exhibit different levels of generosity in their global rating patterns." (p.37)
+
+<u>Discounted Similarity</u>: if the number of common ratings $|I_u \cap I_v|$ is too small, we reduce the similarity function with a discount factor, so that we de-emphasize the importance of that user pair.
+
+$$
+\text{DiscountedSim}(u,v) = \text{Sim}(u,v) \cdot \displaystyle\frac{\min\{ |I_u \cap I_v|, \beta\}}{\beta}
+$$
+
+where $\beta$ is a threshold for the number of common ratings and $\displaystyle\frac{\min\{ |I_u \cap I_v|, \beta\}}{\beta} \in [0,1]$ is the discount factor.
+
+**Variants of the Prediction Function**:
+
+(P. 38)
 
 #### 2.3.2 Item-Based Neighborhood Models
