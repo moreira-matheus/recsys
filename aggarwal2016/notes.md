@@ -351,8 +351,36 @@ $$
 
 where $\beta$ is a threshold for the number of common ratings and $\displaystyle\frac{\min\{ |I_u \cap I_v|, \beta\}}{\beta} \in [0,1]$ is the discount factor.
 
-**Variants of the Prediction Function**:
+**Variants of the Prediction Function**: instead of mean-centering the raw rating $r_{uj}$ to the centered $s_{uj}$, one might use the $Z$ score $z_{uj}$ dividing $s_{uj}$ by the standard deviation $\sigma_u$ of the observed ratings of user $u$.
 
-(P. 38)
+$$
+\sigma_u = \sqrt{\displaystyle\frac{\sum_{j \in I_u} (r_{uj} - \mu_u)^2}{|I_u| - 1}} \quad \forall u \in \{1, ..., m\}
+$$
+
+<u>Standardized rating</u>:
+
+$$
+z_{uj} = \displaystyle\frac{r_{uj} - \mu_u}{\sigma_u} = \displaystyle\frac{s_{uj}}{\sigma_u}
+$$
+
+<u>Predicted rating</u>:
+
+$$
+\hat{r}_{uj} = \mu_u + \sigma_u \displaystyle\frac{\sum_{v \in P_u(j)} \text{Sim}(u,v) \cdot z_{vj}}{\sum_{v \in P_u(j)} |\text{Sim}(u,v)|}
+$$
+
+> "Note that the weighted average needs to be *multiplied* with $\sigma_u$ in this case. In general, if a function $g(\cdot)$ is applied during ratings normalization, then its inverse needs to be applied during the final prediction process." (p. 38)
+
+<u>Amplifying the similarity</u>:
+
+$$
+\text{Sim}(u,v) = \text{Pearson}(u,v)^\alpha
+$$
+
+Choosing $\alpha > 1$, we amplify the importance of the similarity.
+
+**Variations in Filtering Peer Group**:
+
+(P. 39)
 
 #### 2.3.2 Item-Based Neighborhood Models
