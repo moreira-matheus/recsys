@@ -369,6 +369,8 @@ $$
 \hat{r}_{uj} = \mu_u + \sigma_u \displaystyle\frac{\sum_{v \in P_u(j)} \text{Sim}(u,v) \cdot z_{vj}}{\sum_{v \in P_u(j)} |\text{Sim}(u,v)|}
 $$
 
+where $P_u(j)$ is the set of top $k$ similar users ot user $u$ for which ratings for item $j$ have been observed.
+
 > "Note that the weighted average needs to be *multiplied* with $\sigma_u$ in this case. In general, if a function $g(\cdot)$ is applied during ratings normalization, then its inverse needs to be applied during the final prediction process." (p. 38)
 
 <u>Amplifying the similarity</u>:
@@ -379,8 +381,23 @@ $$
 
 Choosing $\alpha > 1$, we amplify the importance of the similarity.
 
-**Variations in Filtering Peer Group**:
+**Impact of the Long Tail**:
 
-(P. 39)
+<u>Inverse User Frequency</u>: analogous to the concept of [Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) in Information Retrieval.
+
+$$
+w_j = \log \bigg(\displaystyle\frac{m}{m_j}\bigg) \quad \forall j \in {1, ...,m}
+$$
+
+where $m_j$ is the number of ratings for item $j$ and $m$ the total number of users.
+Then, each item $j$ is weighted by $w_j$ during both the similarity computation and recommendation.
+
+<u>Pearson coefficient</u>:
+
+$$
+\text{Pearson}(u,v) = \displaystyle\frac{\sum_{k \in I_u \cap I_v} w_k \cdot (r_{uk} - \mu_u) \cdot (r_{vk} - \mu_v)}{\sqrt{\sum_{k \in I_u \cap I_v} w_k \cdot (r_{uk} - \mu_u)^2} \cdot \sqrt{\sum_{k \in I_u \cap I_v} w_k \cdot (r_{uk} - \mu_u)^2}}
+$$
 
 #### 2.3.2 Item-Based Neighborhood Models
+
+(P. 40)
