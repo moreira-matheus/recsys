@@ -400,4 +400,31 @@ $$
 
 #### 2.3.2 Item-Based Neighborhood Models
 
-(P. 40)
+The idea is to use the user's own ratings for other items to predict the rating for an unspecified / target item.
+
+Similarities need to be computed between items (or columns in the ratings matrix).
+- Before computing the similarities between columns, each row is centered to a mean of zero.
+- The average rating of each item in the matrix is subtracted from each rating, to have a mean-centered matrix.
+
+<u>Adjusted cosine similarity</u>: it is adjusted because ratings are mean-centered before computation.
+
+$$
+\text{AdjustedCosine}(u,j) = \displaystyle\frac{\sum_{u \in U_i \cap U_j} s_{ui} \cdot s_{uj}}{\sqrt{\sum_{u \in U_i \cap U_j} s_{ui}^2} \cdot \sqrt{\sum_{u \in U_i \cap U_j} s_{uj}^2}}
+$$
+
+where $U_i$ is the set of indices of users who have specified ratings for item $i$ and $s_{uj}$ is the mean-centered ratings by user $u$ for item $j$.
+
+*Problem*: determine the rating for an item $t$.
+1. Determine the top $k$ most similar items to $t$: adjusted cosine similarity.
+2. Let $Q_t (u)$ denote the top $k$ items most similar to $t$ for which user $u$ has specified a rating.
+3. The *weighted* average of those raw ratings is the predicted value: the weight of item $j$ is equal to the similarity between item $j$ and target item $t$, i.e., $w_j = \text{AdjustedCosine}(j,t)$.
+
+<u>Predicted rating of user $u$ for item $t$</u>:
+
+$$
+\hat{r}_{ut} = \displaystyle\frac{\sum_{j \in Q_t(u)} \text{AdjustedCosine}(j,t) \cdot r_{uj}}{\sum_{j \in Q_t(u)} |\text{AdjustedCosine}(j,t)|}
+$$
+
+#### 2.3.3 Efficient Implementation and Computational Complexity
+
+(P. 41)
